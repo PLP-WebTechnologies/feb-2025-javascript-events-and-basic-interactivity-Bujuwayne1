@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    
+    <header>
+        <h1>🎉 Interactive Playground 🎉</h1>
+        <p>Explore all these fun interactive elements!</p>
+    </header>
+    
+    <section id="event-handling">
+        <h2>🎈 Event Handling</h2>
+        
+        <h3>Button Click</h3>
+        <button id="click-btn" class="btn">Click for Confetti!</button>
+        
+        <h3>Hover Effects</h3>
+        <div class="hover-container">
+            <button class="btn hover-target">Hover Me!</button>
+            <img src="https://picsum.photos/150" alt="Random" class="hover-target">
+        </div>
+        
+        <h3>Keypress Detection</h3>
+        <p>Try typing the Konami code: ↑ ↑ ↓ ↓ ← → ← → B A</p>
+        <div id="keypress-feedback"></div>
+        
+        <h3>Secret Action</h3>
+        <p>Long press the logo below (hold for 2 seconds)</p>
+        <img id="logo" src="https://via.placeholder.com/100" alt="Logo">
+        <div id="easter-egg">
+            <h3>🎊 You found the Easter egg! 🎊</h3>
+            <p>Congratulations, explorer!</p>
+        </div>
+    </section>
+    
+    <section id="interactive-elements">
+        <h2>🎮 Interactive Elements</h2>
+        
+        <h3>Color Changing Button</h3>
+        <button id="color-changer" class="btn">Click to Change My Color!</button>
+        
+        <h3>Image Slideshow</h3>
+        <div class="slideshow">
+            <img src="https://picsum.photos/800/300?random=1" class="slide active" alt="Slide 1">
+            <img src="https://picsum.photos/800/300?random=2" class="slide" alt="Slide 2">
+            <img src="https://picsum.photos/800/300?random=3" class="slide" alt="Slide 3">
+        </div>
+        <div class="slideshow-controls">
+            <button id="prev-btn" class="btn">Previous</button>
+            <button id="next-btn" class="btn">Next</button>
+            <button id="auto-btn" class="btn">Auto-play</button>
+        </div>
+        
+        <h3>Accordion FAQ</h3>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">What is this website?</div>
+                <div class="accordion-content">
+                    <p>This is an interactive playground to demonstrate various web interaction techniques!</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How do I use these features?</div>
+                <div class="accordion-content">
+                    <p>Just play around! Click buttons, hover over elements, and try the form below.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Can I see the code?</div>
+                <div class="accordion-content">
+                    <p>Of course! Right-click and select "View Page Source" or use your browser's developer tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="form-validation">
+        <h2>📋 Form Validation</h2>
+        
+        <form id="demo-form">
+            <div class="form-group">
+                <label for="name">Name (required)</label>
+                <input type="text" id="name" required>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email (must be valid)</label>
+                <input type="email" id="email" required>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password (min 8 characters)</label>
+                <input type="password" id="password" required minlength="8">
+                <div id="password-strength"></div>
+                <div class="error-message"></div>
+            </div>
+            
+            <button type="submit" class="btn submit-btn">Submit</button>
+        </form>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('click-btn').addEventListener('click', () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+</body>
+</html>
